@@ -14,21 +14,27 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import FormControl from '@mui/material/FormControl';
 
 
+
 export const LoginForm = () => {
   
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
+ 
+
 
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.currentTarget;
+
+   
     dispatch(
       logIn({
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
     );
-    form.reset();
+
+    
   };
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);

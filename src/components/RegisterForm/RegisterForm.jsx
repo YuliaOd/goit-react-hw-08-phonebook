@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { register } from 'redux/auth/operations';
@@ -19,6 +20,7 @@ export const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
 
+
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -29,7 +31,7 @@ export const RegisterForm = () => {
         password: form.elements.password.value,
       })
     );
-    form.reset();
+    
   };
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
